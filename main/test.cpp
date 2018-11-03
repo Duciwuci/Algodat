@@ -3,5 +3,5 @@
 
 
 int main() {
-    std::cout << "Raphi Hurensohn" << std::endl;
+    std::cout << "Duc ist so hässlich" << std::endl;
 }
