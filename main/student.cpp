@@ -7,7 +7,14 @@
 using std::ostream;
 using std::istream;
 
-    Student::Student() { }   
+    Student::Student() { }  
+
+    Student::Student(char * prename, char * surname, char * birthday, int matrikelnr) {
+        strcpy(this->prename, prename);
+        strcpy(this->surname, surname);
+        strcpy(this->birthday, birthday);
+        this->matrikelnr = matrikelnr;
+    } 
 
     int Student::GetMatrikelNr() {
         return matrikelnr;

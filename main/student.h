@@ -25,6 +25,8 @@ class Student {
         void write(ostream& ostr)const;
         void read(istream& istr);
 
+        Student(char * prename, char * surname, char * birthday, int matrikelnr);
+
         Student();
         int GetMatrikelNr();
         void SetMatrikelNr(int matrikelnr);
