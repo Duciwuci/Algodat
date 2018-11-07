@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstring>
+#include "..\main\student.h"
 
 
 
