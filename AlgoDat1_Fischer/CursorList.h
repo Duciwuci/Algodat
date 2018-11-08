@@ -8,9 +8,12 @@
 #include "CursorIterator.h"
 
 template <class T> class List {
+
+    T root;
+
 public:
     typedef T value_type;
-    typedef ListIterator<T> iterator;
+    typedef CursorIterator<T> iterator;
     bool empty() const;
     int size() const;
     T& front() const;

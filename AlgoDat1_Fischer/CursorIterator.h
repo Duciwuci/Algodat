@@ -7,7 +7,7 @@
 
 
 template <class T> class ListIterator {
-    typedef ListIterator<T> iterator;4
+    typedef ListIterator<T> iterator;
 public:
     T& operator *();
     iterator& operator = (const iterator& rhs);
