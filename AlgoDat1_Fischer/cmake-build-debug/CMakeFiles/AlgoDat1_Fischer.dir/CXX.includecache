@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Reawelq/CLionProjects/AlgoDat1_Fischer/Student.cpp
+/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/Student.cpp
 iostream
 -
 cstring
@@ -16,13 +16,13 @@ ostream
 istream
 -
 student.h
-/cygdrive/c/Users/Reawelq/CLionProjects/AlgoDat1_Fischer/student.h
+/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/student.h
 
-/cygdrive/c/Users/Reawelq/CLionProjects/AlgoDat1_Fischer/main.cpp
+/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/main.cpp
 iostream
 -
 
-/cygdrive/c/Users/Reawelq/CLionProjects/AlgoDat1_Fischer/student.h
+/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/student.h
 iostream
 -
 cstring

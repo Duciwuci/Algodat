@@ -1,4 +1,4 @@
-C:\Users\Reawelq\.CLion2017.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/Reawelq/CLionProjects/AlgoDat1_Fischer
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/c/Users/Reawelq/CLionProjects/AlgoDat1_Fischer/cmake-build-debug
+-- Build files have been written to: /Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug
