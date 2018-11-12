@@ -30,6 +30,11 @@ public:
     iterator insert(iterator itr, const T& value); // insert before itr
     iterator erase(iterator start, iterator stop); // stop exclusive
     iterator erase(iterator itr); // return ++itr
+
+private:
+    int getFree();
+    int getLast();
+    int getFront();
 };
 
 #endif //ALGODAT1_FISCHER_CURSORLIST_H
