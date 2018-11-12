@@ -6,8 +6,8 @@
 #define ALGODAT1_FISCHER_CURSORITERATOR_H
 
 
-template <class T> class ListIterator {
-    typedef ListIterator<T> iterator;
+template <class T> class CursorIterator {
+    typedef CursorIterator<T> iterator;
 public:
     T& operator *();
     iterator& operator = (const iterator& rhs);

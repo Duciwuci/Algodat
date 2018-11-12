@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer"
+CMAKE_SOURCE_DIR = "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/AlgoDat1_Fischer.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/AlgoDat1_Fischer.dir/flags.make
 
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o: CMakeFiles/AlgoDat1_Fischer.dir/flags.make
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/main.cpp"
 
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/main.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/main.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.i
 
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/main.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/main.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.s
 
 CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o: CMakeFiles/AlgoDat1_Fischer.dir/flags.make
 CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o: ../Student.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/Student.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.cpp"
 
 CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/Student.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.i
 
 CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/Student.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.s
 
 CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o: CMakeFiles/AlgoDat1_Fischer.dir/flags.make
 CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o: ../CursorList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/CursorList.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.cpp"
 
 CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/CursorList.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.i
 
 CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/CursorList.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.s
 
 CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o: CMakeFiles/AlgoDat1_Fischer.dir/flags.make
 CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o: ../CursorIterator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/CursorIterator.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o -c "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorIterator.cpp"
 
 CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/CursorIterator.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorIterator.cpp" > CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.i
 
 CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/CursorIterator.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorIterator.cpp" -o CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.s
 
 # Object files for target AlgoDat1_Fischer
 AlgoDat1_Fischer_OBJECTS = \
@@ -125,7 +125,7 @@ AlgoDat1_Fischer: CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o
 AlgoDat1_Fischer: CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o
 AlgoDat1_Fischer: CMakeFiles/AlgoDat1_Fischer.dir/build.make
 AlgoDat1_Fischer: CMakeFiles/AlgoDat1_Fischer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable AlgoDat1_Fischer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable AlgoDat1_Fischer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AlgoDat1_Fischer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/AlgoDat1_Fischer.dir/clean:
 .PHONY : CMakeFiles/AlgoDat1_Fischer.dir/clean
 
 CMakeFiles/AlgoDat1_Fischer.dir/depend:
-	cd "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer" "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer" "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug" "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug" "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/AlgoDat1_Fischer.dir/depend
 

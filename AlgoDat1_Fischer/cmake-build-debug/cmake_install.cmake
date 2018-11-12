@@ -1,4 +1,4 @@
-# Install script for directory: /Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer
+# Install script for directory: /Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/vmai/Documents/Duc/private Documents/Algodat/AlgoDat1_Fischer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

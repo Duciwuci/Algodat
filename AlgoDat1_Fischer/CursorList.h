@@ -7,9 +7,15 @@
 
 #include "CursorIterator.h"
 
-template <class T> class List {
+template <class T,  int N> class CursorList {
 
-    T root;
+    struct link {
+        T element;
+        int previous;
+        int next;
+    };
+
+    link list[N];
 
 public:
     typedef T value_type;
@@ -25,6 +31,5 @@ public:
     iterator erase(iterator start, iterator stop); // stop exclusive
     iterator erase(iterator itr); // return ++itr
 };
-
 
 #endif //ALGODAT1_FISCHER_CURSORLIST_H
