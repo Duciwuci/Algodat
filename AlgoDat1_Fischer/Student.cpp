@@ -5,7 +5,7 @@
 #include <cstring>
 #include <ostream>
 #include <istream>
-#include "student.h"
+#include "Student.h"
 
 using std::ostream;
 using std::istream;

@@ -9,6 +9,7 @@
 template <class T> class CursorIterator {
     typedef CursorIterator<T> iterator;
 public:
+    CursorIterator();
     T& operator *();
     iterator& operator = (const iterator& rhs);
     bool operator != (const iterator& rhs) const;

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorIterator.h
+
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.cpp
+CursorList.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.h
+
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.h
+CursorIterator.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorIterator.h
+
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.h
+iostream
+-
+cstring
+-
+ostream
+-
+istream
+-
+
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/main.cpp
+iostream
+-
+CursorList.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.h
+Student.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.h
+
