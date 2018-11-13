@@ -49,7 +49,7 @@ public:
             this->list[0].next = -1;
             start_list = 0;
             end_list = 0;
-            start_free = start_free++ < N  ? start_free++ : -1;
+            start_free = start_free++;
         }  else if (start_free >= 0) {
             this->list[start_free].element = input;
             this->list[start_free].previous = -1;
