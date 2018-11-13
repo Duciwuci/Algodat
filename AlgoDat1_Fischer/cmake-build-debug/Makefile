@@ -123,60 +123,6 @@ AlgoDat1_Fischer/fast:
 	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/build
 .PHONY : AlgoDat1_Fischer/fast
 
-CursorIterator.o: CursorIterator.cpp.o
-
-.PHONY : CursorIterator.o
-
-# target to build an object file
-CursorIterator.cpp.o:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.o
-.PHONY : CursorIterator.cpp.o
-
-CursorIterator.i: CursorIterator.cpp.i
-
-.PHONY : CursorIterator.i
-
-# target to preprocess a source file
-CursorIterator.cpp.i:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.i
-.PHONY : CursorIterator.cpp.i
-
-CursorIterator.s: CursorIterator.cpp.s
-
-.PHONY : CursorIterator.s
-
-# target to generate assembly for a file
-CursorIterator.cpp.s:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/CursorIterator.cpp.s
-.PHONY : CursorIterator.cpp.s
-
-CursorList.o: CursorList.cpp.o
-
-.PHONY : CursorList.o
-
-# target to build an object file
-CursorList.cpp.o:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.o
-.PHONY : CursorList.cpp.o
-
-CursorList.i: CursorList.cpp.i
-
-.PHONY : CursorList.i
-
-# target to preprocess a source file
-CursorList.cpp.i:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.i
-.PHONY : CursorList.cpp.i
-
-CursorList.s: CursorList.cpp.s
-
-.PHONY : CursorList.s
-
-# target to generate assembly for a file
-CursorList.cpp.s:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/CursorList.cpp.s
-.PHONY : CursorList.cpp.s
-
 Student.o: Student.cpp.o
 
 .PHONY : Student.o
@@ -240,12 +186,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AlgoDat1_Fischer"
-	@echo "... CursorIterator.o"
-	@echo "... CursorIterator.i"
-	@echo "... CursorIterator.s"
-	@echo "... CursorList.o"
-	@echo "... CursorList.i"
-	@echo "... CursorList.s"
 	@echo "... Student.o"
 	@echo "... Student.i"
 	@echo "... Student.s"
