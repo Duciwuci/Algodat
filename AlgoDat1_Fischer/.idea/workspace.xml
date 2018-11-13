@@ -60,6 +60,7 @@
     <session id="-1674880938">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -123,7 +124,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CursorList.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="179">
@@ -159,11 +160,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CursorIterator.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            <state relative-caret-position="75">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#85#94#0" expanded="true" />
                 <element signature="e#144#153#0" expanded="true" />
@@ -227,7 +228,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="834" />
@@ -298,16 +299,15 @@
       <workItem from="1541681770208" duration="539000" />
       <workItem from="1541683119545" duration="1688000" />
       <workItem from="1541702532581" duration="2485000" />
-      <workItem from="1541972230514" duration="6334000" />
+      <workItem from="1541972230514" duration="6667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11046000" />
+    <option name="totallyTimeSpent" value="11379000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="834" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="833" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -386,21 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CursorIterator.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-          <folding>
-            <element signature="e#85#94#0" expanded="true" />
-            <element signature="e#144#153#0" expanded="true" />
-            <element signature="e#258#267#0" expanded="true" />
-            <element signature="e#365#374#0" expanded="true" />
-            <element signature="e#431#440#0" expanded="true" />
-            <element signature="e#476#485#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CursorIterator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -429,6 +414,21 @@
             <element signature="e#1594#1610#0" expanded="true" />
             <element signature="e#1805#1821#0" expanded="true" />
             <element signature="e#2467#2483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CursorIterator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#85#94#0" expanded="true" />
+            <element signature="e#144#153#0" expanded="true" />
+            <element signature="e#258#267#0" expanded="true" />
+            <element signature="e#365#374#0" expanded="true" />
+            <element signature="e#431#440#0" expanded="true" />
+            <element signature="e#476#485#0" expanded="true" />
           </folding>
         </state>
       </provider>
