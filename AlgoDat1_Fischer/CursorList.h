@@ -10,7 +10,7 @@
 template <class T,  int N> class CursorList {
 
     struct link {
-        T* element;
+        T element;
         int previous;
         int next;
     };
@@ -23,7 +23,7 @@ public:
      */
     CursorList() {
         for(int i = 0; i < N - 1; i++) {
-            this->list[i].element = nullptr;
+            this->list[i].element = -1;
             this->list[i].previous = -1;
             this->list[i].next = -1;
         }
@@ -34,8 +34,8 @@ public:
     typedef CursorIterator<T> iterator;
 
     bool empty() const {
-        for(int i = 0; i < N - 1; i++) {
-            if(this->list[i].element != nullptr) {
+        for(T& object : this->list) {
+            if(object.element != -1) {
                 return false;
             }
         }
@@ -51,23 +51,23 @@ public:
             return nullptr;
         }
         for(int i = 0; i < N - 1; i++) {
-            if(this->list[i].element != nullptr && this->list[i].previous == -1 && this->list[i].next != -1) {
+            if(*(this->list[i].element) != -1 && this->list[i].previous == -1 && this->list[i].next != -1) {
                 return this->list[i].element;
             }
         }
     };
 
-    void push_front(const T &newVariable) {
+    void push_front(const T &input) {
         if(empty()) {
-            this->list[0].element = newVariable;
+            this->list[0].element = input;
             this->list[0].previous = -1;
             this->list[0].next = -1;
         }  else if (this->getFree() >= 0) {
-            this->list[this->getFree()].element = newVariable;
+            this->list[this->getFree()].element = input;
             this->list[this->getFree()].previous = -1;
             this->list[this->getFree()].next = this->getFront();
         } else {
-            this->list[this->getLast()].element = newVariable;
+            this->list[this->getLast()].element = input;
             this->list[this->getLast()].previous = -1;
             this->list[this->getLast()].next = this->getFront();
         }
@@ -77,7 +77,7 @@ public:
         if(empty()) {
             return;
         }  else {
-            this->list[this->getFront()].element = nullptr;
+            this->list[this->getFront()].element = 0;
             this->list[this->getFront()].previous = -1;
             this->list[this->getFront()].next = -1;
         }
@@ -100,7 +100,7 @@ public:
 private:
     int getFree() {
         for(int i = 0; i < sizeof(this->list) - 1; i++) {
-            if(list[i].element == nullptr) {
+            if(*(this->list[i].element) == -1) {
                 return i;
             }
         }
@@ -109,7 +109,7 @@ private:
 
     int getLast() {
         for(int i = 0; i < sizeof(this->list) - 1; i++) {
-            if(list[i].element != nullptr && list[i].previous != -1 && list[i].next == -1) {
+            if(*(this->list[i].element) != -1 && list[i].previous != -1 && list[i].next == -1) {
                 return i;
             }
         }
@@ -118,7 +118,7 @@ private:
 
     int getFront() {
         for(int i = 0; i < sizeof(this->list) - 1; i++) {
-            if(list[i].element != nullptr && list[i].previous == -1 && list[i].next != -1) {
+            if(*(this->list[i].element) != -1 && list[i].previous == -1 && list[i].next != -1) {
                 return i;
             }
         }
