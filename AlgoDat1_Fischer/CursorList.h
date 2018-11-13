@@ -15,46 +15,30 @@ template <class T,  int N> class CursorList {
         int next;
     };
 
+    int start_list = 0;
+    int start_free = 0;
+    int end_list = 0;
     link list[N];
 
 public:
-    /**
-     * Fill the list with empty students;
-     */
-    CursorList() {
-        for(int i = 0; i < N - 1; i++) {
-            this->list[i].element = -1;
-            this->list[i].previous = -1;
-            this->list[i].next = -1;
-        }
-    };
 
     typedef T value_type;
 
     typedef CursorIterator<T> iterator;
 
     bool empty() const {
-        for(T& object : this->list) {
-            if(object.element != -1) {
-                return false;
-            }
-        }
-        return true;
+        return start_list == start_free;
     };
 
     int size() const {
         return N;
     };
 
-    value_type& front() const {
+    T& front() const {
         if(this->empty()) {
-            return nullptr;
+            return -1;
         }
-        for(int i = 0; i < N - 1; i++) {
-            if(*(this->list[i].element) != -1 && this->list[i].previous == -1 && this->list[i].next != -1) {
-                return this->list[i].element;
-            }
-        }
+        return this->list[start_free];
     };
 
     void push_front(const T &input) {
@@ -62,33 +46,45 @@ public:
             this->list[0].element = input;
             this->list[0].previous = -1;
             this->list[0].next = -1;
+            start_list = 0;
+            end_list = 0;
+            start_free = start_free++ < N  ? start_free++ : -1;
         }  else if (this->getFree() >= 0) {
             this->list[this->getFree()].element = input;
             this->list[this->getFree()].previous = -1;
             this->list[this->getFree()].next = this->getFront();
+            this->list[start_list].previous = getFree();
+            end_list = getFront();
+            start_list = getFree();
+            start_free = start_free++ < N  ? start_free++ : -1;
         } else {
+            int previous = this->list[this->getLast()].previous;
             this->list[this->getLast()].element = input;
             this->list[this->getLast()].previous = -1;
             this->list[this->getLast()].next = this->getFront();
+            this->list[start_list].previous = getLast();
+            start_list = end_list;
+            end_list = previous;
         }
-    }; // add a new value to the front of a list
+    };
 
     void pop_front() {
         if(empty()) {
             return;
-        }  else {
-            this->list[this->getFront()].element = 0;
-            this->list[this->getFront()].previous = -1;
-            this->list[this->getFront()].next = -1;
         }
+        int next = this->list[start_list].next;
+        this-list[this->list[start_list].next].previous = -1;
+        this->list[start_list].element = -1;
+        this->list[start_list].previous = -1;
+        this->list[start_list].next = -1;
+        start_free = start_list;
+        start_list = next;
     };
 
     iterator begin() const {
-        return !empty() ? iterator(this, getFront()) : iterator(this, 0);
     };
 
     iterator end() const {
-        return !empty() ? iterator(this, getLast()) : iterator(this, 0);
     };
 
     iterator insert(iterator itr, const T& value); // insert before itr
@@ -99,30 +95,15 @@ public:
 
 private:
     int getFree() {
-        for(int i = 0; i < sizeof(this->list) - 1; i++) {
-            if(*(this->list[i].element) == -1) {
-                return i;
-            }
-        }
-        return -1;
+        return start_free;
     }
 
     int getLast() {
-        for(int i = 0; i < sizeof(this->list) - 1; i++) {
-            if(*(this->list[i].element) != -1 && list[i].previous != -1 && list[i].next == -1) {
-                return i;
-            }
-        }
-        return -1;
+        return end_list;
     }
 
     int getFront() {
-        for(int i = 0; i < sizeof(this->list) - 1; i++) {
-            if(*(this->list[i].element) != -1 && list[i].previous == -1 && list[i].next != -1) {
-                return i;
-            }
-        }
-        return -1;
+        return start_list;
     }
 };
 
