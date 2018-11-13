@@ -6,6 +6,7 @@
 #define ALGODAT1_FISCHER_CURSORLIST_H
 
 #include "CursorIterator.h"
+#include <iostream>
 
 template <class T,  int N> class CursorList {
 
@@ -49,20 +50,20 @@ public:
             start_list = 0;
             end_list = 0;
             start_free = start_free++ < N  ? start_free++ : -1;
-        }  else if (this->getFree() >= 0) {
-            this->list[this->getFree()].element = input;
-            this->list[this->getFree()].previous = -1;
-            this->list[this->getFree()].next = this->getFront();
-            this->list[start_list].previous = getFree();
-            end_list = getFront();
-            start_list = getFree();
+        }  else if (start_free >= 0) {
+            this->list[start_free].element = input;
+            this->list[start_free].previous = -1;
+            this->list[start_free].next = start_list;
+            this->list[start_list].previous = start_free;
+            end_list = start_list;
+            start_list = start_free;
             start_free = start_free++ < N  ? start_free++ : -1;
         } else {
-            int previous = this->list[this->getLast()].previous;
-            this->list[this->getLast()].element = input;
-            this->list[this->getLast()].previous = -1;
-            this->list[this->getLast()].next = this->getFront();
-            this->list[start_list].previous = getLast();
+            int previous = this->list[this->end_list].previous;
+            this->list[end_list].element = input;
+            this->list[end_list].previous = -1;
+            this->list[end_list].next = start_list;
+            this->list[start_list].previous = end_list;
             start_list = end_list;
             end_list = previous;
         }
@@ -72,13 +73,12 @@ public:
         if(empty()) {
             return;
         }
-        int next = this->list[start_list].next;
-        this-list[this->list[start_list].next].previous = -1;
-        this->list[start_list].element = -1;
-        this->list[start_list].previous = -1;
-        this->list[start_list].next = -1;
+        int* next = &this->list[start_list].next;
+        this->list[*next].previous = -1;
+        this->list[start_free].previous = -1;
+        this->list[start_free].next = -1;
         start_free = start_list;
-        start_list = next;
+        start_list = *next == -1 ? 0 : *next;
     };
 
     iterator begin() const {
@@ -92,19 +92,6 @@ public:
     iterator erase(iterator start, iterator stop); // stop exclusive
 
     iterator erase(iterator itr); // return ++itr
-
-private:
-    int getFree() {
-        return start_free;
-    }
-
-    int getLast() {
-        return end_list;
-    }
-
-    int getFront() {
-        return start_list;
-    }
 };
 
 #endif //ALGODAT1_FISCHER_CURSORLIST_H

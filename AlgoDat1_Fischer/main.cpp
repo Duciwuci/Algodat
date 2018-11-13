@@ -10,7 +10,6 @@ int main() {
     list.push_front(Duc);
 
     list.push_front(Duc);
-
     list.pop_front();
     list.pop_front();
     list.pop_front();
