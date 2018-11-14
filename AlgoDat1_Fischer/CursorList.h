@@ -82,6 +82,7 @@ public:
     };
 
     iterator begin() const {
+        return iterator(this, front());
     };
 
     iterator end() const {

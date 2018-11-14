@@ -5,11 +5,19 @@
 #ifndef ALGODAT1_FISCHER_CURSORITERATOR_H
 #define ALGODAT1_FISCHER_CURSORITERATOR_H
 
+#include "CursorList.h"
+
 
 template <class T> class CursorIterator {
+
+    struct link {
+        T element;
+        int next;
+        int previous;
+    }
     typedef CursorIterator<T> iterator;
 public:
-    CursorIterator();
+    CursorIterator(CursorList<T, N>* list, CursorList<T, N>::link* cl);
     T& operator *();
     iterator& operator = (const iterator& rhs);
     bool operator != (const iterator& rhs) const;
