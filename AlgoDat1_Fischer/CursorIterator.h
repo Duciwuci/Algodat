@@ -8,22 +8,39 @@
 #include "CursorList.h"
 
 
-template <class T> class CursorIterator {
+template <class T, int N> class CursorIterator {
 
     struct link {
         T element;
         int next;
         int previous;
-    }
-    typedef CursorIterator<T> iterator;
+    };
+    link mainElement;
+    typedef T value_type;
+    CursorList<value_type , N> mainList;
+    typedef CursorIterator<T, N> iterator;
 public:
-    CursorIterator(CursorList<T, N>* list, CursorList<T, N>::link* cl);
-    T& operator *();
-    iterator& operator = (const iterator& rhs);
-    bool operator != (const iterator& rhs) const;
-    bool operator == (const iterator& rhs) const;
-    iterator& operator ++();
-    iterator operator ++(int); // postfix operator, dummy parameter
+    CursorIterator(CursorList<value_type , N>* list, link* cl) {
+        this->mainElement = *cl;
+        this->mainList = list;
+    } ;
+    T& operator *() {
+
+    };
+    iterator& operator = (const iterator& rhs) {
+    };
+    bool operator != (const iterator& rhs) const {
+        return this->mainElement.element != rhs.mainElement.element ? true : false;
+    };
+    bool operator == (const iterator& rhs) const {
+        return this->mainElement.element == rhs.mainElement.element ? true : false;
+    };
+    iterator& operator ++() {
+        
+    };
+    iterator operator ++(int) {
+
+    }; // postfix operator, dummy parameter
 };
 
 

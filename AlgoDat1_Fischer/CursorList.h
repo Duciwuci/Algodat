@@ -25,7 +25,7 @@ public:
 
     typedef T value_type;
 
-    typedef CursorIterator<T> iterator;
+    typedef CursorIterator<T, N> iterator;
 
     bool empty() const {
         return start_list == start_free;
