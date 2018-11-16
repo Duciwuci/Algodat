@@ -36,7 +36,7 @@ public:
         return this->mainElement.element == rhs.mainElement.element ? true : false;
     };
     iterator& operator ++() {
-        
+
     };
     iterator operator ++(int) {
 
