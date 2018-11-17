@@ -4,7 +4,6 @@
 CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o: ../Student.cpp
 CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o: ../Student.h
 
-CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o: ../CursorIterator.h
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o: ../CursorList.h
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o: ../Student.h
 CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o: ../main.cpp

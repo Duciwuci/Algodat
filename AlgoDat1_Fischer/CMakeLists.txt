@@ -3,5 +3,5 @@ project(AlgoDat1_Fischer)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp Student.cpp Student.h CursorList.h CursorIterator.h)
+set(SOURCE_FILES main.cpp Student.cpp Student.h CursorList.h)
 add_executable(AlgoDat1_Fischer ${SOURCE_FILES})

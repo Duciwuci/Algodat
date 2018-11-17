@@ -82,9 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorIterator.h">
-			<Option target="AlgoDat1_Fischer"/>
-		</Unit>
 		<Unit filename="/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.h">
 			<Option target="AlgoDat1_Fischer"/>
 		</Unit>

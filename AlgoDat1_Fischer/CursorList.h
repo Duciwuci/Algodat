@@ -5,10 +5,54 @@
 #ifndef ALGODAT1_FISCHER_CURSORLIST_H
 #define ALGODAT1_FISCHER_CURSORLIST_H
 
-#include "CursorIterator.h"
 #include <iostream>
 
 template <class T,  int N> class CursorList {
+
+    class CursorIterator {
+
+        struct link {
+            T element;
+            int next;
+            int previous;
+        };
+    public:
+        link mainElement;
+        typedef T value_type;
+        typedef CursorList<T, N> list_type;
+        list_type mainList;
+        typedef CursorIterator iterator;
+
+        CursorIterator(list_type* list, link cl) {
+            this->mainElement = *cl;
+            this->mainList = list;
+        } ;
+        T& operator *() {
+
+        };
+        iterator& operator = (const iterator& rhs) {
+        };
+        bool operator != (const iterator& rhs) const {
+            return this->mainElement.element != rhs.mainElement.element ? true : false;
+        };
+        bool operator == (const iterator& rhs) const {
+            return this->mainElement.element == rhs.mainElement.element ? true : false;
+        };
+        iterator& operator ++() {
+            return this->next();
+        };
+        iterator operator ++(int value) {
+            for(int i = 0; i < value; i++) {
+                this->next();
+            }
+            return this;
+        }; // postfix operator, dummy parameter
+
+    private:
+        iterator& next() {
+            //TODO: implement
+        }
+    };
 
     struct link {
         T element;
@@ -25,7 +69,7 @@ public:
 
     typedef T value_type;
 
-    typedef CursorIterator<T, N> iterator;
+    typedef CursorIterator iterator;
 
     bool empty() const {
         return start_list == start_free;
@@ -56,6 +100,7 @@ public:
             this->list[start_free].next = start_list;
             this->list[start_list].previous = start_free;
             end_list = start_list;
+            //TODO: Abfrage,start_list darf nur start_free sein, wenn start_free < start_list
             start_list = start_free;
             start_free = start_free++ < N  ? start_free++ : -1;
         } else {
@@ -82,7 +127,7 @@ public:
     };
 
     iterator begin() const {
-        return iterator(this, this->list[start_list]);
+        return iterator(&this, &(this->list[start_list]));
     };
 
     iterator end() const {
@@ -93,14 +138,25 @@ public:
         if(empty()) {
             this->list[0].element = *value;
         } else {
-            
+            //TODO: logic
+            this->list[start_free].element = *value;
+            this->list[start_free].previous = ;
+            this->list[start_free].next = ;
+            this->list[this->list[start_free].previous].next = ;
+            itr.mainElement.element = this->list[start_free].element;
+            itr.mainElement.previous = this->list[start_free].previous;
+            itr.mainElement.next = this->list[start_free].next;
         }
         return itr;
     }; // insert before itr
 
-    iterator erase(iterator start, iterator stop); // stop exclusive
+    iterator erase(iterator start, iterator stop) {
+        // TODO: What is this?
+    }; // stop exclusive
 
-    iterator erase(iterator itr); // return ++itr
+    iterator erase(iterator itr) {
+        // TODO: implement.
+    }; // return ++itr
 };
 
 #endif //ALGODAT1_FISCHER_CURSORLIST_H
