@@ -82,13 +82,21 @@ public:
     };
 
     iterator begin() const {
-        return iterator(this, front());
+        return iterator(this, this->list[start_list]);
     };
 
     iterator end() const {
+        return iterator(this, this->list[end_list]);
     };
 
-    iterator insert(iterator itr, const T& value); // insert before itr
+    iterator insert(iterator itr, const T& value) {
+        if(empty()) {
+            this->list[0].element = *value;
+        } else {
+            
+        }
+        return itr;
+    }; // insert before itr
 
     iterator erase(iterator start, iterator stop); // stop exclusive
 
