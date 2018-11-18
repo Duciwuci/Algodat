@@ -25,6 +25,9 @@ public:
     friend bool operator<= (const Student &a, const Student &b);
     friend bool operator>= (const Student &a, const Student &b);
 
+    friend istream& operator >> (istream& istr, Student& stud);
+    friend ostream& operator << (ostream& ostr, const Student& stud);
+
     void write(ostream& ostr)const;
     void read(istream& istr);
 
