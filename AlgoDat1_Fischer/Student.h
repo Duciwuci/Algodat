@@ -13,7 +13,7 @@ class Student {
     int matrikelnr;
     char prename [10];
     char surname [10];
-    char birthday [9];
+    char birthday [10];
 
 public:
 

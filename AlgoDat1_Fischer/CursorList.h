@@ -25,16 +25,16 @@ template <class T,  int N> class CursorList {
     public:
         link mainElement;
         typedef T value_type;
-        typedef CursorList<T, N> list_type;
-        list_type* mainList;
+        CursorList<T, N> *mainList;
+        //list_type* mainList;
         typedef CursorIterator iterator;
 
-        CursorIterator(list_type* list, link *cl) {
+        CursorIterator(CursorList<T, N> *list, link *cl) {
             this->mainElement = *cl;
             this->mainList = list;
         } ;
         T& operator *() {
-            return &mainElement;
+            return mainElement.element;
         };
         iterator& operator = (const iterator& rhs) {
         };
@@ -45,7 +45,8 @@ template <class T,  int N> class CursorList {
             return this->mainElement.element == rhs.mainElement.element ? true : false;
         };
         iterator& operator ++() {
-            return this->next();
+            this->next();
+            return *this;
         };
         iterator operator ++(int value) {
             for(int i = 0; i < value; i++) {
@@ -61,12 +62,13 @@ template <class T,  int N> class CursorList {
             if (this->mainElement.next == -1) {
                 this->mainElement = mainList->list[mainList->start_list];
             } else {
-                this->mainElement = mainList->list[this->mainElement.next];
+                int next = mainElement.next;
+                mainElement = mainList->list[next];
             }
         }
     };
 
-    int start_list = 0;
+    int start_list = -1;
     int start_free = 0;
     int end_list = 0;
     link list[N];
@@ -86,7 +88,7 @@ public:
     }
 
     bool empty() const {
-        return start_list == start_free;
+        return start_list == -1;
     };
 
     int size() const {
@@ -101,82 +103,89 @@ public:
     };
 
     void push_front(const T &input) {
+        int new_start_free = -1;
         if(empty()) {
+            new_start_free = list[0].next;
             this->list[0].element = input;
             this->list[0].previous = -1;
             this->list[0].next = -1;
             start_list = 0;
             end_list = 0;
         }  else if (start_free >= 0) {
+            new_start_free = list[start_free].next;
             this->list[start_free].element = input;
             this->list[start_free].previous = -1;
             this->list[start_free].next = start_list;
             this->list[start_list].previous = start_free;
             start_list = start_free;
         } else {
-            int previous = this->list[this->end_list].previous;
-            this->list[end_list].element = input;
-            this->list[end_list].previous = -1;
-            this->list[end_list].next = start_list;
-            this->list[start_list].previous = end_list;
-            start_list = end_list;
-            end_list = previous;
+            // else is start_free == -1 --> no Place. So just replace the start_list element;
+            list[start_list].element = input;
         }
-        if (start_free != -1 ) start_free = this->list[start_free].next;
+        start_free = new_start_free;
     };
 
     void pop_front() {
         if(empty()) {
             return;
         }
-        int* next = &this->list[start_list].next;
-        this->list[*next].previous = -1;
-        this->list[start_free].previous = -1;
-        this->list[start_free].next = -1;
+        int next = list[start_list].next;
+        list[next].previous = -1;
+
         // TODO: Irgendeine Abfrage von dir Duc...
 
         // buffer index of start_list to add it to the Free Place List
         // after start_list has changed to its new index
         int index = start_list;
-        start_list = *next == -1 ? 0 : *next;
+        start_list = next == -1 ? 0 : next;
 
         this->addIndexToFreePlaceList(index);
     };
 
-    iterator begin() const {
-        return iterator(&this, &(this->list[start_list]));
+    iterator begin() {
+        return CursorIterator(this, &(this->list[start_list]));
     };
 
-    iterator end() const {
-        return iterator(&this, &(this->list[end_list]));
+    iterator end() {
+        return CursorIterator(this, &(this->list[end_list]));
     };
 
     iterator insert(iterator itr, const T& value) {
+        int new_Start_free = start_free != -1 ? list[start_free].next : -1;
         if(empty()) {
-            this->list[0].element = *value;
+            this->list[0].element = value;
         } else if (start_free == -1) {
             //TODO: was passiert wenn es keinen leeren Platz gibt?
         } else {
-            //TODO: check impoementation
-            this->list[start_free].element = *value;
-            this->list[start_free].next = this->list[itr.mainElement.previous].next;
-            this->list[start_free].previous = itr.mainElement.previous;
+            list[start_free].element = value;
 
-            this->list[this->list[start_free].previous].next = start_free;
-            itr.mainElement.element = this->list[start_free].element;
-            itr.mainElement.previous = this->list[start_free].previous;
-            itr.mainElement.next = this->list[start_free].next;
+            // TODO: Problem... Wir bräuchten in CursorList eigentlich den Index des MainElements
+            // Die Implementierung geht nicht wenn es die liste nur 2 elemente groß ist und ist mega ugly
+            int prevElem = itr.mainElement.previous;
+
+            // ist so hässlich, weil ich den index des Mainelements nicht habe...
+            int mainElement = list[itr.mainElement.next].previous;
+            list[start_free].next = list[itr.mainElement.next].previous;
+            list[start_free].previous = prevElem;
+            list[mainElement].previous = start_free;
+            if (prevElem == -1) {
+                start_list = start_free;
+            } else {
+                list[prevElem].next = start_free;
+            }
+
+            itr.mainElement = list[start_free];
         }
-        if (start_free != -1 ) start_free = this->list[start_free].next;
+        start_free = new_Start_free;
         return itr;
     }; // insert before itr
 
     iterator erase(iterator start, iterator stop) {
-        T& startElement = start.operator*();
-        T& endElement = stop.operator*();
+        link startElement = start.mainElement;
+        link endElement = stop.mainElement;
 
-        int first = startElement->previous;
-        int last = endElement->next;
+        int first = startElement.previous;
+        int last = endElement.next;
 
         int firstFree = list[first].next;
         int lastFree = list[last].previous;
@@ -186,15 +195,19 @@ public:
         list[start_free].previous = lastFree;
         start_free = firstFree;
 
+        if (first == -1) start_list = last;
+
         return ++start;
     }; // stop exclusive
 
     iterator erase(iterator itr) {
-        T& element = itr.operator*();
-        int index = list[element->previous].next;
+        link element = itr.mainElement;
+        int index = list[element.previous].next;
 
-        if (element->previous != -1) list[element->previous].next = element->next;
-        if (element->next != -1) list[element->next].previous = element->previous;
+        if (element.previous != -1) list[element.previous].next = element.next;
+        if (element.next != -1) list[element.next].previous = element.previous;
+
+        if (element.previous == -1) start_list = element.previous;
 
         this->addIndexToFreePlaceList(index);
 

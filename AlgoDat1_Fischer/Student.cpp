@@ -56,7 +56,7 @@ void Student::read(istream& istr) {
 }
 
 void Student::write(ostream& ostr)const {
-    ostr << surname << prename << birthday << matrikelnr << std::endl;
+    ostr << surname << ", " << prename << " - Birthday: " << birthday << " - Matrikel NR.: " << matrikelnr << std::endl;
 }
 
 ostream& operator << (ostream& ostr, const Student& stud) {
