@@ -6,23 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/CursorList.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.h
 iostream
 -
 
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/Student.cpp
-iostream
--
-cstring
--
-ostream
--
-istream
--
-Student.h
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/Student.h
-
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/Student.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.h
 iostream
 -
 cstring
@@ -32,11 +20,11 @@ ostream
 istream
 -
 
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/main.cpp
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/main.cpp
 iostream
 -
 CursorList.h
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/CursorList.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/CursorList.h
 Student.h
-/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/Student.h
+/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.h
 

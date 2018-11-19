@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/Student.cpp" "/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o"
-  "/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/main.cpp" "/cygdrive/c/Users/Reawelq/Documents/Projects/Algodat_I/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o"
+  "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Aufgabe_4.cpp" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/Aufgabe_4.cpp.o"
+  "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/Student.cpp" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o"
+  "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/main.cpp" "/Users/vmai/Documents/Duc/private Documents/Algodat_2/AlgoDat1_Fischer/cmake-build-debug/CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
