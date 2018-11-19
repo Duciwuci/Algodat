@@ -2,6 +2,8 @@
 #include "CursorList.h"
 #include "Student.h"
 
+
+// TODO: Hier schreiben wir einfach die Aufgabe 5
 int main() {
     CursorList<Student, 3> list;
     Student Duc = Student("Duc", "Mai", "23.1.97", 34634345);

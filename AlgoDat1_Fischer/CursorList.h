@@ -10,7 +10,15 @@
 // Aufgabe 4
 template<typename Iterator, typename T>
 Iterator find(Iterator start, Iterator stop, const T& value) {
-    // TODO: implement
+    // TODO: Duc & Raphi: Wir müssen hier die Types richtig übergeben. Aktuell ist das fast Pseudecode.
+    for (link element : start->mainList) {
+        if(element->element == *value) {
+            return start;
+        } else {
+            start->next;
+        }
+    }
+    return stop;
 };
 
 template <class T,  int N> class CursorList {
@@ -39,17 +47,13 @@ private:
     }
 
 public:
-    typedef T value_type;
-
     class CursorIterator {
 
         int iteratorIndex;
 
     public:
         link mainElement;
-        typedef T value_type;
         CursorList<T, N> *mainList;
-        //list_type* mainList;
         typedef CursorIterator iterator;
 
         CursorIterator(CursorList<T, N> *list, link *cl) {
@@ -226,7 +230,7 @@ public:
         list[start_free].previous = lastFree;
         start_free = firstFree;
 
-        if (first == -1) start_list = last;
+        if (first < 0) start_list = last;
 
         return ++start;
     }; // stop exclusive
