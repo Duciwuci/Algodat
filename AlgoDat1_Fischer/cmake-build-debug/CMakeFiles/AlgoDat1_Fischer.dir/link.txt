@@ -1,1 +1,1 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o CMakeFiles/AlgoDat1_Fischer.dir/Aufgabe_4.cpp.o  -o AlgoDat1_Fischer 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/AlgoDat1_Fischer.dir/main.cpp.o CMakeFiles/AlgoDat1_Fischer.dir/Student.cpp.o  -o AlgoDat1_Fischer 

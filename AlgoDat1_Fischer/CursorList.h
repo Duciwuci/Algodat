@@ -7,11 +7,17 @@
 
 #include <iostream>
 
+template<typename T>
+struct link {
+    T element;
+    int previous;
+    int next;
+};
+
 // Aufgabe 4
 template<typename Iterator, typename T>
 Iterator find(Iterator start, Iterator stop, const T& value) {
-    // TODO: Duc & Raphi: Wir müssen hier die Types richtig übergeben. Aktuell ist das fast Pseudecode.
-    for (link element : start->mainList) {
+    for (link<T> element : start->mainList) {
         if(element->element == *value) {
             return start;
         } else {
@@ -23,16 +29,10 @@ Iterator find(Iterator start, Iterator stop, const T& value) {
 
 template <class T,  int N> class CursorList {
 
-    struct link {
-        T element;
-        int previous;
-        int next;
-    };
-
     int start_list = -1;
     int start_free = 0;
     int end_list = 0;
-    link list[N];
+    link<T> list[N];
 
 private:
     void addIndexToFreePlaceList(int index) {
@@ -52,11 +52,11 @@ public:
         int iteratorIndex;
 
     public:
-        link mainElement;
+        link<T> mainElement;
         CursorList<T, N> *mainList;
         typedef CursorIterator iterator;
 
-        CursorIterator(CursorList<T, N> *list, link *cl) {
+        CursorIterator(CursorList<T, N> *list, link<T> *cl) {
             this->mainElement = *cl;
             this->mainList = list;
             iteratorIndex = list->getStartList();
@@ -66,7 +66,6 @@ public:
         };
 
         iterator& operator = (const iterator& rhs) {
-            // TODO: Raphi: ich hoffe das ist richtig, es handelt sich ja hier um eine Zuweisung.
             this->mainElement = *rhs.mainElement;
         };
 
@@ -102,7 +101,7 @@ public:
                 iteratorIndex = mainList->getStartList();
             } else {
                 int next = mainElement.next;
-                mainElement = mainList[next];
+                this->mainElement = mainList->list[next];
                 iteratorIndex = mainElement.next;
             }
         }
@@ -216,8 +215,8 @@ public:
     }; // insert before itr
 
     iterator erase(iterator start, iterator stop) {
-        link startElement = start.mainElement;
-        link endElement = stop.mainElement;
+        link<T> startElement = start.mainElement;
+        link<T> endElement = stop.mainElement;
 
         int first = startElement.previous;
         int last = endElement.next;
@@ -236,7 +235,7 @@ public:
     }; // stop exclusive
 
     iterator erase(iterator itr) {
-        link element = itr.mainElement;
+        link<T> element = itr.mainElement;
         int index = list[element.previous].next;
 
         if (element.previous != -1) list[element.previous].next = element.next;

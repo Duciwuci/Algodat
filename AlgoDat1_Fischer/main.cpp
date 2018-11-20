@@ -88,5 +88,26 @@ int main() {
     //std::cout << Raphi << std::endl;
     /*std::cout << list.front() << std::endl;
     std::cout << list.front() << std::endl;*/
+
+    char* prename;
+    char* name;
+    char* geburtstag;
+    int matrikel;
+
+    std::cout << "Name des Studenten" << std::endl;
+    std::cin >> prename;
+    std::cout << "Nachmane des Studenten" << std::endl;
+    std::cin >> name;
+    std::cout << "Geburtstag des Studenten" << std::endl;
+    std::cin >> geburtstag;
+    std::cout << "Matrikel des Studenten" << std::endl;
+    std::cin >> matrikel;
+
+    Student newStudent = Student(prename, name, geburtstag, matrikel);
+
+    list.push_front(newStudent);
+
+    std::cout << list.front();
+
     return 0;
 }

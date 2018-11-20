@@ -123,33 +123,6 @@ AlgoDat1_Fischer/fast:
 	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/build
 .PHONY : AlgoDat1_Fischer/fast
 
-Aufgabe_4.o: Aufgabe_4.cpp.o
-
-.PHONY : Aufgabe_4.o
-
-# target to build an object file
-Aufgabe_4.cpp.o:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/Aufgabe_4.cpp.o
-.PHONY : Aufgabe_4.cpp.o
-
-Aufgabe_4.i: Aufgabe_4.cpp.i
-
-.PHONY : Aufgabe_4.i
-
-# target to preprocess a source file
-Aufgabe_4.cpp.i:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/Aufgabe_4.cpp.i
-.PHONY : Aufgabe_4.cpp.i
-
-Aufgabe_4.s: Aufgabe_4.cpp.s
-
-.PHONY : Aufgabe_4.s
-
-# target to generate assembly for a file
-Aufgabe_4.cpp.s:
-	$(MAKE) -f CMakeFiles/AlgoDat1_Fischer.dir/build.make CMakeFiles/AlgoDat1_Fischer.dir/Aufgabe_4.cpp.s
-.PHONY : Aufgabe_4.cpp.s
-
 Student.o: Student.cpp.o
 
 .PHONY : Student.o
@@ -213,9 +186,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AlgoDat1_Fischer"
-	@echo "... Aufgabe_4.o"
-	@echo "... Aufgabe_4.i"
-	@echo "... Aufgabe_4.s"
 	@echo "... Student.o"
 	@echo "... Student.i"
 	@echo "... Student.s"
