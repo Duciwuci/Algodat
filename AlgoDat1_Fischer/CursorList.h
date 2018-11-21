@@ -59,7 +59,7 @@ public:
         CursorIterator(CursorList<T, N> *list, link<T> *cl) {
             this->mainElement = *cl;
             this->mainList = list;
-            iteratorIndex = list->getStartList();
+            iteratorIndex = cl->next > 0 ? list->start_list : list->end_list;
         } ;
         T& operator *() {
             return mainElement.element;
@@ -96,9 +96,10 @@ public:
         void next() {
             // if mainElement.next == -1 point to the first element, else take the next one
             if (this->mainElement.next < 0) {
-                // TODO: Raphi: ich glaube hier reicht ein "return", meinst du nicht? wenns kein next gibt, braucht er nicht weiter iterieren.
-                this->mainElement = mainList->list[mainList->start_list];
-                iteratorIndex = mainList->getStartList();
+                if (!this->mainList->empty()) {
+                    this->mainElement = mainList->list[mainList->start_list];
+                }
+                iteratorIndex = mainList->start_list;
             } else {
                 int next = mainElement.next;
                 this->mainElement = mainList->list[next];
@@ -126,10 +127,10 @@ public:
         return N;
     };
 
-    T& front() const {
+    T& front() {
         // Das ist leider wichtig, damit wir keine ArrayExceptions bekommen
         if(this->empty()) {
-            return -1;
+            return list[0].element;
         }
         return list[start_list].element;
     };
@@ -163,14 +164,10 @@ public:
         }
         int next = list[start_list].next;
         list[next].previous = -1;
-
-        // TODO: Irgendeine Abfrage von dir Duc...
-
         // buffer index of start_list to add it to the Free Place List
         // after start_list has changed to its new index
         int index = start_list;
         start_list = next < 0 ? 0 : next;
-
         this->addIndexToFreePlaceList(index);
     };
 
@@ -187,12 +184,10 @@ public:
         if(empty()) {
             this->list[0].element = value;
         } else {
-            if (start_free == -1) {
+            if (start_free < 0) {
                 start_free = end_list;
             }
             list[start_free].element = value;
-
-            // TODO: Problem... Wir bräuchten in CursorList eigentlich den Index des MainElements
             // TODO: Raphi: ich hab dem CursorIterator jetzt einen Index gegeben, hier kannst du ihn abfragen.
             // Die Implementierung geht nicht wenn es die liste nur 2 elemente groß ist und ist mega ugly
             int prevElem = itr.mainElement.previous;
@@ -247,12 +242,6 @@ public:
 
         return ++itr;
     }; // return ++itr
-
-    // Getter
-
-    int getStartList() {
-        return start_list;
-    }
 
 };
 

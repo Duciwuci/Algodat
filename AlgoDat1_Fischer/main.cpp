@@ -2,11 +2,11 @@
 #include "CursorList.h"
 #include "Student.h"
 
+void addStudent(CursorList<Student, 10> list);
 
 // TODO: Hier schreiben wir einfach die Aufgabe 5
 int main() {
-    CursorList<Student, 3> list;
-    Student Duc = Student("Duc", "Mai", "23.1.97", 34634345);
+    /*Student Duc = Student("Duc", "Mai", "23.1.97", 34634345);
     Student Raphi = Student("Raphael", "Colberg", "12.09.1994", 1);
     Student Dani = Student("Daniel", "Pittroff", "10.01.1995", 5);
     Student Max = Student("Max", "Mustermann", "10.01.1995", 6);
@@ -86,12 +86,48 @@ int main() {
 
     std::cout << "Empty? " << list.empty() << std::endl;
     //std::cout << Raphi << std::endl;
-    /*std::cout << list.front() << std::endl;
+    std::cout << list.front() << std::endl;
     std::cout << list.front() << std::endl;*/
+    CursorList<Student, 10> list;
 
-    char* prename;
-    char* name;
-    char* geburtstag;
+    std::cout << "fügen Sie den ersten Studenten zu" << std::endl;
+
+    addStudent(list);
+
+    while(1) {
+        std::cout << "Wollen Sie weitere Studenten hinzufügen? ja / nein" << std::endl;
+
+        std::string answer;
+        std::cin >> answer;
+        if (answer == "nein") {
+            break;
+        }
+    }
+
+    while(1) {
+        std::cout << "Wollen Sie Studenten anhand von der Matrikelnummer suchen? ja / nein" << std::endl;
+
+        std::string answer;
+        std::cin >> answer;
+
+        if (answer == "nein") {
+            break;
+        }
+        std::cout << "Geben Sie mir eine MAtrikelnummer, damit ich suchen kann" << std::endl;
+        int answerMatrikel;
+        std::cin >> answerMatrikel;
+
+        // TODO: suche Student anhand Matrikel
+    }
+    // TODO: teste alle anderen Methoden
+    std::cout << "Programm beendet" << std::endl;
+    return 0;
+}
+
+void addStudent(CursorList<Student, 10> list) {
+    std::string prename;
+    std::string name;
+    std::string geburtstag;
     int matrikel;
 
     std::cout << "Name des Studenten" << std::endl;
@@ -106,8 +142,4 @@ int main() {
     Student newStudent = Student(prename, name, geburtstag, matrikel);
 
     list.push_front(newStudent);
-
-    std::cout << list.front();
-
-    return 0;
 }

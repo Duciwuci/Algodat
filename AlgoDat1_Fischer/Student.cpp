@@ -12,11 +12,11 @@ using std::istream;
 
 Student::Student() { }
 
-Student::Student(char * prename, char * surname, char * birthday, int matrikelnr) {
-    strcpy(this->prename, prename);
-    strcpy(this->surname, surname);
-    strcpy(this->birthday, birthday);
-    this->matrikelnr = matrikelnr;
+Student::Student(std::string vor, std::string nach, std::string geb, int matrikel) {
+    strncpy(prename, vor.c_str(),10);  //strncpy und c_str zur konvertierung des Strings.
+    strncpy(surname, nach.c_str(),10);
+    matrikelnr = matrikel;
+    strncpy(birthday, geb.c_str(), 10);
 }
 
 int Student::GetMatrikelNr() {
