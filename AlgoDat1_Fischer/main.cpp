@@ -4,6 +4,8 @@
 
 void addStudent(CursorList<Student, 10> list);
 
+void searchWithMatrikel(CursorList<Student, 10> list);
+
 // TODO: Hier schreiben wir einfach die Aufgabe 5
 int main() {
     /*Student Duc = Student("Duc", "Mai", "23.1.97", 34634345);
@@ -102,6 +104,7 @@ int main() {
         if (answer == "nein") {
             break;
         }
+        addStudent(list);
     }
 
     while(1) {
@@ -113,13 +116,11 @@ int main() {
         if (answer == "nein") {
             break;
         }
-        std::cout << "Geben Sie mir eine MAtrikelnummer, damit ich suchen kann" << std::endl;
-        int answerMatrikel;
-        std::cin >> answerMatrikel;
-
-        // TODO: suche Student anhand Matrikel
+        searchWithMatrikel(list);
     }
+
     // TODO: teste alle anderen Methoden
+
     std::cout << "Programm beendet" << std::endl;
     return 0;
 }
@@ -142,4 +143,34 @@ void addStudent(CursorList<Student, 10> list) {
     Student newStudent = Student(prename, name, geburtstag, matrikel);
 
     list.push_front(newStudent);
+}
+
+void searchWithMatrikel(CursorList<Student, 10> list) {
+    std::cout << "Geben Sie mir eine MAtrikelnummer, damit ich suchen kann" << std::endl;
+    int answerMatrikel;
+    std::cin >> answerMatrikel;
+
+    int matrikel;
+    bool found = false;
+    Student founded;
+
+    std::cout << "Variablen werden initialisiert..." << std::endl;
+
+    std::cin >> matrikel;
+    CursorList<Student, 10>::iterator findStudent = list.begin();
+    for (int i = 0; i < 10; i++) {
+        std::cout << "Iteration..." << std::endl;
+        ++findStudent;
+        if(findStudent.operator*().GetMatrikelNr() == matrikel) {
+            found = true;
+            founded = findStudent.operator*();
+            break;
+        }
+    }
+    std::cout << "Ergebnisse werden geladen..." << std::endl;
+    if(found) {
+        std::cout << founded << std::endl;
+    } else {
+        std::cout << "nicht gefunden" << std::endl;
+    }
 }
