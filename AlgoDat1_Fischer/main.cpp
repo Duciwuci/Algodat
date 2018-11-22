@@ -146,28 +146,23 @@ void addStudent(CursorList<Student, 10> list) {
 }
 
 void searchWithMatrikel(CursorList<Student, 10> list) {
-    std::cout << "Geben Sie mir eine MAtrikelnummer, damit ich suchen kann" << std::endl;
+    std::cout << "Geben Sie mir eine Matrikelnummer, damit ich suchen kann" << std::endl;
     int answerMatrikel;
     std::cin >> answerMatrikel;
-
-    int matrikel;
     bool found = false;
     Student founded;
 
-    std::cout << "Variablen werden initialisiert..." << std::endl;
-
-    std::cin >> matrikel;
     CursorList<Student, 10>::iterator findStudent = list.begin();
     for (int i = 0; i < 10; i++) {
-        std::cout << "Iteration..." << std::endl;
-        ++findStudent;
-        if(findStudent.operator*().GetMatrikelNr() == matrikel) {
+        std::cout << findStudent.operator*().GetMatrikelNr() << std::endl;
+        std::cout << answerMatrikel << std::endl;
+        if(findStudent.operator*().GetMatrikelNr() == answerMatrikel) {
             found = true;
             founded = findStudent.operator*();
             break;
         }
+        ++findStudent;
     }
-    std::cout << "Ergebnisse werden geladen..." << std::endl;
     if(found) {
         std::cout << founded << std::endl;
     } else {
