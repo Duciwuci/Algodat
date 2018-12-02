@@ -52,36 +52,37 @@ public:
         int iteratorIndex;
 
     public:
-        link<T> mainElement;
         CursorList<T, N> *mainList;
         typedef CursorIterator iterator;
 
-        CursorIterator(CursorList<T, N> *list, link<T> *cl) {
-            this->mainElement = *cl;
+        CursorIterator(CursorList<T, N> *list) {
             this->mainList = list;
-            iteratorIndex = cl->next > 0 ? list->start_list : list->end_list;
+            iteratorIndex = list->start_list;
         } ;
         T& operator *() {
-            return mainElement.element;
+            return mainList->list[iteratorIndex].element;
         };
 
         iterator& operator = (const iterator& rhs) {
-            this->mainElement = *rhs.mainElement;
+            this->mainList = rhs.mainList;
+            this->iteratorIndex = rhs.iteratorIndex;
+            return *this;
         };
 
-        bool operator != (const iterator& rhs) const {
-            return this->mainElement.element != rhs.mainElement.element ? true : false;
+        bool operator != (iterator& rhs) {
+            return this->operator*() != rhs.operator*();
         };
-        bool operator == (const iterator& rhs) const {
-            return this->mainElement.element == rhs.mainElement.element ? true : false;
+        bool operator == (iterator& rhs) {
+            return this->operator*() == rhs.operator*();
         };
         iterator& operator ++() {
-            this->next();
+            this->iteratorIndex = getIteratorNextIndex();
             return *this;
         };
         iterator operator ++(int value) {
             for(int i = 0; i < value; i++) {
-                this->next();
+                if (iteratorIndex == -1) return *this;
+                iteratorIndex = getIteratorNextIndex();
             }
             return *this;
         }; // postfix operator, dummy parameter
@@ -90,21 +91,12 @@ public:
             return iteratorIndex;
         }
 
+        int getIteratorNextIndex() {
+            return this->mainList->list[iteratorIndex].next;
+        }
 
-
-    private:
-        void next() {
-            // if mainElement.next == -1 point to the first element, else take the next one
-            if (this->mainElement.next < 0) {
-                if (!this->mainList->empty()) {
-                    this->mainElement = mainList->list[mainList->start_list];
-                }
-                iteratorIndex = mainList->start_list;
-            } else {
-                int next = mainElement.next;
-                this->mainElement = mainList->list[next];
-                iteratorIndex = mainElement.next;
-            }
+        int getIteratorPreviousIndex() {
+            return this->mainList->list[iteratorIndex].previous;
         }
     };
 
@@ -128,7 +120,6 @@ public:
     };
 
     T& front() {
-        // Das ist leider wichtig, damit wir keine ArrayExceptions bekommen
         if(this->empty()) {
             return list[0].element;
         }
@@ -172,11 +163,15 @@ public:
     };
 
     iterator begin() {
-        return CursorIterator(this, &(this->list[start_list]));
+        return CursorIterator(this);
     };
 
     iterator end() {
-        return CursorIterator(this, &(this->list[end_list]));
+        CursorIterator result = CursorIterator(this);
+        while (result.getIteratorNextIndex() != -1) {
+            result++;
+        }
+        return result;
     };
 
     iterator insert(iterator itr, const T& value) {
@@ -188,13 +183,10 @@ public:
                 start_free = end_list;
             }
             list[start_free].element = value;
-            // TODO: Raphi: ich hab dem CursorIterator jetzt einen Index gegeben, hier kannst du ihn abfragen.
-            // Die Implementierung geht nicht wenn es die liste nur 2 elemente groß ist und ist mega ugly
-            int prevElem = itr.mainElement.previous;
+            int prevElem = itr.getIteratorPreviousIndex();
 
-            // ist so hässlich, weil ich den index des Mainelements nicht habe...
-            int mainElement = list[itr.mainElement.next].previous;
-            list[start_free].next = list[itr.mainElement.next].previous;
+            int mainElement = itr.getIteratorIndex();
+            list[start_free].next = mainElement;
             list[start_free].previous = prevElem;
             list[mainElement].previous = start_free;
             if (prevElem == -1) {
@@ -202,22 +194,20 @@ public:
             } else {
                 list[prevElem].next = start_free;
             }
-
-            itr.mainElement = list[start_free];
         }
         start_free = new_Start_free;
-        return itr;
+        return CursorIterator(this);
     }; // insert before itr
 
     iterator erase(iterator start, iterator stop) {
-        link<T> startElement = start.mainElement;
-        link<T> endElement = stop.mainElement;
 
-        int first = startElement.previous;
-        int last = endElement.next;
+        // start.previous and stop.next will be linked.
+        int first = start.getIteratorPreviousIndex();
+        int last = stop.getIteratorNextIndex();
 
-        int firstFree = list[first].next;
-        int lastFree = list[last].previous;
+        // the Deleted ones will be added to the free list
+        int firstFree = start.getIteratorIndex();
+        int lastFree = stop.getIteratorIndex();
 
         list[first].next = last;
         list[last].previous = first;
@@ -230,19 +220,19 @@ public:
     }; // stop exclusive
 
     iterator erase(iterator itr) {
-        link<T> element = itr.mainElement;
-        int index = list[element.previous].next;
+        int index = itr.getIteratorIndex();
 
-        if (element.previous != -1) list[element.previous].next = element.next;
-        if (element.next != -1) list[element.next].previous = element.previous;
+        int prev = itr.getIteratorPreviousIndex();
+        int next = itr.getIteratorNextIndex();
+        if (prev != -1) list[prev].next = next;
+        if (next != -1) list[next].previous = prev;
 
-        if (element.previous == -1) start_list = element.previous;
+        if (prev == -1) start_list = prev;
 
         this->addIndexToFreePlaceList(index);
 
         return ++itr;
     }; // return ++itr
-
 };
 
 #endif //ALGODAT1_FISCHER_CURSORLIST_H
